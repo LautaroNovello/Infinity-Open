@@ -53,30 +53,6 @@ export default function Reservations() {
   ]
 
   // Estado para Mis Reservas
-  const [reservations, setReservations] = useState([
-    {
-      id: 1,
-      attraction: 'Montaña Rusa del Dragón',
-      date: '2024-11-15',
-      time: '2:00 PM',
-      status: 'confirmed',
-    },
-    {
-      id: 2,
-      attraction: 'Espectáculo de Delfines',
-      date: '2024-11-15',
-      time: '4:00 PM',
-      status: 'confirmed',
-    },
-    {
-      id: 3,
-      attraction: 'Toboganes Acuáticos',
-      date: '2024-11-20',
-      time: '11:00 AM',
-      status: 'confirmed',
-    },
-  ])
-
   const tabs = [
     { id: 'new-ticket', label: 'Nueva Entrada' },
     { id: 'my-tickets', label: 'Mis Entradas' },
