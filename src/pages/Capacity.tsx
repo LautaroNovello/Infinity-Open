@@ -107,18 +107,18 @@ export default function Capacity() {
   return (
     <div className="animate-fade-in min-h-screen bg-gray-100 dark:bg-[#111122]">
       {/* Back Button */}
-      <div className="px-4 py-4 sticky top-0 bg-gray-100 dark:bg-[#111122] z-10">
+      <div className="px-4 py-4 bg-gray-100 dark:bg-[#111122]">
         <button
           onClick={() => navigate('/more')}
-          className="flex items-center gap-2 text-gray-700 dark:text-white"
+          className="flex items-center gap-2 text-gray-700 dark:text-white hover:opacity-80 transition-opacity"
         >
           <ChevronLeft size={24} />
           <span className="text-lg font-semibold">Aforo en Tiempo Real</span>
         </button>
       </div>
       
-      {/* Search Bar - Sticky */}
-      <div className="px-4 py-3 sticky top-0 bg-gray-100 dark:bg-[#111122] z-10">
+      {/* Search Bar */}
+      <div className="px-4 py-3 bg-gray-100 dark:bg-[#111122]">
         <label className="flex flex-col min-w-40 h-12 w-full">
           <div className="flex w-full flex-1 items-stretch rounded-lg h-full">
             <div className="text-gray-500 dark:text-[#9292c9] flex border-none bg-gray-200 dark:bg-[#232348] items-center justify-center pl-4 rounded-l-lg">
@@ -135,8 +135,8 @@ export default function Capacity() {
         </label>
       </div>
 
-      {/* Tabs - Sticky with horizontal scroll */}
-      <div className="pb-3 sticky top-[72px] bg-gray-100 dark:bg-[#111122] z-10 overflow-x-auto">
+      {/* Tabs - with horizontal scroll */}
+      <div className="pb-3 bg-gray-100 dark:bg-[#111122] overflow-x-auto">
         <div className="flex border-b border-gray-300 dark:border-[#323267] px-4 gap-8">
           {tabs.map((tab) => (
             <button

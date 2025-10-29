@@ -69,12 +69,12 @@ export default function Alerts() {
   )
 
   return (
-    <div className="animate-fade-in min-h-screen bg-gray-100 dark:bg-background-dark pb-20">
+    <div className="animate-fade-in min-h-screen bg-gray-100 dark:bg-[#111122] pb-20">
       {/* Back Button */}
-      <div className="px-4 py-4 sticky top-0 bg-gray-100 dark:bg-background-dark z-10">
+      <div className="px-4 py-4 bg-gray-100 dark:bg-[#111122]">
         <button
           onClick={() => navigate('/more')}
-          className="flex items-center gap-2 text-gray-700 dark:text-white"
+          className="flex items-center gap-2 text-gray-700 dark:text-white hover:opacity-80 transition-opacity"
         >
           <ChevronLeft size={24} />
           <span className="text-lg font-semibold">Alertas y Notificaciones</span>
@@ -82,7 +82,7 @@ export default function Alerts() {
       </div>
       
       {/* Filter Tabs */}
-      <div className="flex gap-3 p-4 overflow-x-auto">
+      <div className="flex gap-3 p-4 overflow-x-auto bg-gray-100 dark:bg-[#111122]">
         {filters.map((filter) => (
           <button
             key={filter.id}
@@ -99,7 +99,7 @@ export default function Alerts() {
       </div>
 
       {/* Alerts List */}
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-gray-100 dark:bg-[#111122]">
         {filteredAlerts.length === 0 ? (
           <div className="text-center py-8">
             <p className="text-gray-500 dark:text-gray-400">
@@ -110,7 +110,7 @@ export default function Alerts() {
           filteredAlerts.map((alert, index) => (
             <div
               key={alert.id}
-              className="flex gap-4 bg-white dark:bg-background-dark px-4 py-3 justify-between border-b border-gray-200 dark:border-gray-800 animate-slide-up hover:bg-gray-50 dark:hover:bg-gray-900/30 transition-colors"
+              className="flex gap-4 bg-white dark:bg-gray-900/30 px-4 py-3 justify-between border-b border-gray-200 dark:border-gray-800 animate-slide-up hover:bg-gray-50 dark:hover:bg-gray-900/40 transition-colors"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="flex items-start gap-4">

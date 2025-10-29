@@ -79,12 +79,12 @@ export default function Schedules() {
     .filter(attr => attr.name.toLowerCase().includes(searchQuery.toLowerCase()))
 
   return (
-    <div className="animate-fade-in min-h-screen bg-gray-100 dark:bg-background-dark">
+    <div className="animate-fade-in min-h-screen bg-gray-100 dark:bg-[#111122]">
       {/* Back Button */}
-      <div className="px-4 py-4 sticky top-0 bg-gray-100 dark:bg-background-dark z-10">
+      <div className="px-4 py-4 bg-gray-100 dark:bg-[#111122]">
         <button
           onClick={() => navigate('/more')}
-          className="flex items-center gap-2 text-gray-700 dark:text-white"
+          className="flex items-center gap-2 text-gray-700 dark:text-white hover:opacity-80 transition-opacity"
         >
           <ChevronLeft size={24} />
           <span className="text-lg font-semibold">Horarios de Atracciones</span>
@@ -92,7 +92,7 @@ export default function Schedules() {
       </div>
       
       {/* Search Bar */}
-      <div className="px-4 py-3">
+      <div className="px-4 py-3 bg-gray-100 dark:bg-[#111122]">
         <label className="flex flex-col min-w-40 h-12 w-full">
           <div className="flex w-full flex-1 items-stretch rounded-lg h-full">
             <div className="text-gray-500 dark:text-[#9292c9] flex border-none bg-gray-200 dark:bg-[#232348] items-center justify-center pl-4 rounded-l-lg">
@@ -138,7 +138,7 @@ export default function Schedules() {
           filteredAttractions.map((attraction, index) => (
             <div
               key={attraction.id}
-              className="flex items-center gap-4 bg-white dark:bg-background-dark min-h-[72px] py-2 justify-between rounded-lg px-3 hover:shadow-md transition-shadow animate-slide-up"
+              className="flex items-center gap-4 bg-white dark:bg-gray-900/30 min-h-[72px] py-2 justify-between rounded-lg px-3 hover:shadow-md transition-shadow animate-slide-up border border-transparent dark:border-gray-800"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="flex items-center gap-4">
