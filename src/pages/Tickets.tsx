@@ -1,4 +1,4 @@
-import { Ticket, Clock, X, User, Baby, Users as Elderly, Lock } from 'lucide-react'
+import { Ticket, X, User, Baby, Users as Elderly, Lock } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -46,27 +46,6 @@ export default function Tickets() {
     child: 4900,
     senior: 6900,
   }
-
-  const tickets = [
-    {
-      id: 1,
-      type: '2 Entradas Generales',
-      date: '15 de agosto, 2024',
-      status: 'active',
-    },
-    {
-      id: 2,
-      type: '1 Entrada Niño',
-      date: '15 de agosto, 2024',
-      status: 'active',
-    },
-    {
-      id: 3,
-      type: '1 Entrada Senior',
-      date: '20 de julio, 2024',
-      status: 'expired',
-    },
-  ]
 
   const tabs = [
     { id: 'new-ticket', label: 'Nueva Entrada' },

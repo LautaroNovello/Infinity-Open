@@ -52,12 +52,6 @@ export default function Home() {
     return 'text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30'
   }
 
-  const getCapacityBgColor = (capacity: number) => {
-    if (capacity >= 70) return 'bg-red-500/20'
-    if (capacity >= 40) return 'bg-yellow-500/20'
-    return 'bg-green-500/20'
-  }
-
   const getCapacityLabel = (capacity: number) => {
     if (capacity >= 70) return 'Alto'
     if (capacity >= 40) return 'Medio'
