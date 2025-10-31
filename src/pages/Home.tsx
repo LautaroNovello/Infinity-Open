@@ -74,17 +74,6 @@ export default function Home() {
     weather: 'Soleado',
   }
 
-  const getCapacityColor = (capacity: number) => {
-    if (capacity >= 70) return 'text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30'
-    if (capacity >= 40) return 'text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30'
-    return 'text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30'
-  }
-
-  const getCapacityLabel = (capacity: number) => {
-    if (capacity >= 70) return 'Alto'
-    if (capacity >= 40) return 'Medio'
-    return 'Bajo'
-  }
 
   const getIntensityIcon = (intensity: string) => {
     if (intensity === 'Alta') return <Zap size={10} className="text-orange-500" />
