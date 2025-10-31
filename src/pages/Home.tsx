@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <div className="animate-fade-in pb-20 bg-gray-50 dark:bg-[#0a0a1a]">
       {/* Hero Section - Mejorado */}
-      <div className="relative w-full h-80 overflow-hidden">
+      <div className="relative w-full h-96 overflow-hidden">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuACl2ra9Y_aSbsnNQ8LoF9dVNk_Dgk4Il4KY4guJnNkmGelIGuTazxj0K-waVYwFPT7aYD6VpfRlAcMwunIeaDfqBvPaENlp5J3zdeK3GrrwZ0qrljLiXiIoXweUr9aYCP_ur6b4P02DAIUQQG44k5zhz0qNlBYGsl1JGcuAfIQBhsIPJS0qDHnaDtQjIJTePBqNgggh92NZ9D8TRF1DdmZoIgtDhgEb4xFixasP9xRkb6Y9LGf4xFjFQ3U0JyS8LPU3WOLzZS2Db0"
           alt="Infinity Open Parque Acuático"
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50 dark:from-[#0a0a1a] via-transparent to-transparent" />
         
         {/* Hero Content - Diseño moderno */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 pb-8">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 pb-16">
           <div className="space-y-4 animate-slide-up">
             {/* Badge decorativo */}
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-xl px-5 py-2.5 rounded-full border-2 border-white/30 shadow-2xl">
@@ -126,7 +126,7 @@ export default function Home() {
       </div>
 
       {/* Stats Cards - Diseño premium */}
-      <div className="px-4 -mt-24 relative z-10 mb-6">
+      <div className="px-4 -mt-28 relative z-10 mb-6">
         <div className="grid grid-cols-2 gap-3">
           {/* Tarjeta de Temperatura */}
           <div className="group relative bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 dark:from-orange-600 dark:to-pink-600 rounded-3xl p-5 shadow-2xl animate-slide-up overflow-hidden">
