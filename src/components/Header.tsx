@@ -1,6 +1,6 @@
 import { LogOut, User, Moon, Sun } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTheme } from '../hooks/useTheme'
 
 export default function Header() {
@@ -8,6 +8,24 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false)
   const userEmail = localStorage.getItem('userEmail') || 'Usuario'
   const { theme, toggleTheme } = useTheme()
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  // Cerrar el menú al hacer clic fuera de él
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMenu(false)
+      }
+    }
+
+    if (showMenu) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showMenu])
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated')
@@ -34,7 +52,7 @@ export default function Header() {
         >
           {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
         </button>
-        <div className="relative">
+        <div className="relative" ref={menuRef}>
           <button
             onClick={() => setShowMenu(!showMenu)}
             className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 dark:bg-primary text-white hover:bg-blue-700 dark:hover:bg-primary/90 transition-colors"

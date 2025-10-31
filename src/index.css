@@ -108,5 +108,45 @@
       stroke-dashoffset: -200;
     }
   }
+
+  @keyframes slideInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    background-size: 1000px 100%;
+  }
 }
+
 
