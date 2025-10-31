@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { 
-  Users, Bell, Clock, ChevronRight, MapPin, Star, CreditCard, 
-  Settings, HelpCircle, MessageCircle, LogOut, User as UserIcon,
-  Moon, Sun, Globe, Mail, Phone, Info
+  Users, Bell, Clock, ChevronRight, MapPin, Star, 
+  Settings, MessageCircle, LogOut,
+  Moon, Sun, Phone
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -72,43 +72,13 @@ export default function More() {
     },
   ]
 
-  const accountOptions: MenuItem[] = [
-    {
-      id: 5,
-      title: 'Mi Perfil',
-      description: 'Información personal',
-      icon: UserIcon,
-      path: '#',
-      color: 'text-indigo-600 dark:text-indigo-400',
-      bgColor: 'bg-gradient-to-br from-indigo-500 to-indigo-600',
-    },
-    {
-      id: 6,
-      title: 'Métodos de Pago',
-      description: 'Tarjetas guardadas',
-      icon: CreditCard,
-      path: '#',
-      color: 'text-blue-600 dark:text-blue-400',
-      bgColor: 'bg-gradient-to-br from-blue-500 to-blue-600',
-    },
-  ]
-
   const supportOptions: MenuItem[] = [
-    {
-      id: 7,
-      title: 'Centro de Ayuda',
-      description: 'Preguntas frecuentes',
-      icon: HelpCircle,
-      path: '#',
-      color: 'text-gray-600 dark:text-gray-400',
-      bgColor: 'bg-gradient-to-br from-gray-500 to-gray-600',
-    },
     {
       id: 8,
       title: 'Contactar Soporte',
-      description: 'Asistencia 24/7',
+      description: '3534 27-5749',
       icon: MessageCircle,
-      path: '#',
+      path: 'tel:+543534275749',
       color: 'text-teal-600 dark:text-teal-400',
       bgColor: 'bg-gradient-to-br from-teal-500 to-teal-600',
     },
@@ -258,22 +228,11 @@ export default function More() {
           </div>
         </div>
 
-        {/* Mi Cuenta */}
-        <div className="mb-8">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-            <UserIcon className="text-indigo-500" size={24} />
-            Mi Cuenta
-          </h2>
-          <div className="space-y-3">
-            {accountOptions.map((item, index) => renderMenuItem(item, index))}
-          </div>
-        </div>
-
         {/* Soporte */}
         <div className="mb-8">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-            <HelpCircle className="text-teal-500" size={24} />
-            Ayuda y Soporte
+            <Phone className="text-teal-500" size={24} />
+            Contacto
           </h2>
           <div className="space-y-3">
             {supportOptions.map((item, index) => renderMenuItem(item, index))}
@@ -292,18 +251,9 @@ export default function More() {
           </div>
           
           <div className="flex items-center justify-center gap-4 mb-4">
-            <button className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
-              <Mail className="text-blue-600 dark:text-blue-400" size={20} />
-            </button>
-            <button className="p-2 rounded-full bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
-              <Phone className="text-green-600 dark:text-green-400" size={20} />
-            </button>
-            <button className="p-2 rounded-full bg-purple-100 dark:bg-purple-900/30 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors">
-              <Globe className="text-purple-600 dark:text-purple-400" size={20} />
-            </button>
-            <button className="p-2 rounded-full bg-pink-100 dark:bg-pink-900/30 hover:bg-pink-200 dark:hover:bg-pink-900/50 transition-colors">
-              <Info className="text-pink-600 dark:text-pink-400" size={20} />
-            </button>
+            <a href="tel:+543534275749" className="p-3 rounded-full bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
+              <Phone className="text-green-600 dark:text-green-400" size={22} />
+            </a>
           </div>
 
           <div className="text-center text-xs text-gray-500 dark:text-gray-400">

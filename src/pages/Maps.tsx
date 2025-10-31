@@ -140,7 +140,7 @@ export default function Maps() {
   const handleZoomOut = () => setZoom(Math.max(zoom - 0.2, 0.6))
 
   return (
-    <div className="relative flex h-screen w-full flex-col bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-background-dark overflow-hidden">
+    <div className="relative flex h-screen w-full flex-col bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-background-dark overflow-hidden pb-20">
       {/* CSS Animations */}
       <style>{`
         @keyframes dash {
@@ -699,21 +699,21 @@ export default function Maps() {
         </div>
 
         {/* Map Controls - Enhanced design */}
-        <div className="absolute top-4 right-4 flex flex-col gap-3 z-30">
+        <div className="absolute bottom-24 right-4 flex flex-col gap-3 z-30">
           <button
             onClick={handleZoomIn}
-            className="w-14 h-14 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/20 hover:shadow-2xl active:scale-95 border border-gray-200 dark:border-gray-700"
+            className="w-12 h-12 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/20 hover:shadow-2xl active:scale-95 border border-gray-200 dark:border-gray-700"
           >
-            <Plus size={26} className="text-gray-700 dark:text-gray-300" />
+            <Plus size={22} className="text-gray-700 dark:text-gray-300" />
           </button>
           <button
             onClick={handleZoomOut}
-            className="w-14 h-14 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/20 hover:shadow-2xl active:scale-95 border border-gray-200 dark:border-gray-700"
+            className="w-12 h-12 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/20 hover:shadow-2xl active:scale-95 border border-gray-200 dark:border-gray-700"
           >
-            <Minus size={26} className="text-gray-700 dark:text-gray-300" />
+            <Minus size={22} className="text-gray-700 dark:text-gray-300" />
           </button>
-          <button className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 backdrop-blur-md rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/40 hover:shadow-2xl active:scale-95">
-            <Navigation size={26} className="text-white" />
+          <button className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 backdrop-blur-md rounded-xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/40 hover:shadow-2xl active:scale-95">
+            <Navigation size={22} className="text-white" />
           </button>
         </div>
       </main>
