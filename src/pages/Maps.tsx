@@ -295,6 +295,7 @@ export default function Maps() {
           <div
             className="relative w-[150vw] h-[150vh] transform-gpu transition-transform duration-500 ease-out"
             style={{ transform: `scale(${zoom})` }}
+            onClick={() => setSelectedLocation(null)}
           >
             {/* SVG for Paths - Google Maps style paths */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
@@ -473,7 +474,10 @@ export default function Maps() {
                     {/* Google Maps style marker pin */}
                     <div
                       className="location-card relative group cursor-pointer"
-                      onClick={() => setSelectedLocation(isSelected ? null : location.id)}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setSelectedLocation(isSelected ? null : location.id)
+                      }}
                       onMouseEnter={() => setHoveredLocation(location.id)}
                       onMouseLeave={() => setHoveredLocation(null)}
                     >

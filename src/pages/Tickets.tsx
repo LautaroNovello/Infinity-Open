@@ -178,25 +178,26 @@ export default function Tickets() {
 
     // Header con color azul-morado
     pdf.setFillColor(37, 99, 235) // #2563eb
-    pdf.rect(0, 0, pageWidth, 40, 'F')
+    pdf.rect(0, 0, pageWidth, 50, 'F')
 
-    // Título
+    // Nombre de la empresa
     pdf.setTextColor(255, 255, 255)
     pdf.setFontSize(28)
     pdf.setFont('helvetica', 'bold')
-    pdf.text('🎢 Infinity Open', pageWidth / 2, 20, { align: 'center' })
-    pdf.setFontSize(14)
+    pdf.text('INFINITY OPEN', pageWidth / 2, 22, { align: 'center' })
+    
+    pdf.setFontSize(12)
     pdf.setFont('helvetica', 'normal')
-    pdf.text('Tu Entrada Digital', pageWidth / 2, 30, { align: 'center' })
+    pdf.text('Tu Entrada Digital', pageWidth / 2, 35, { align: 'center' })
 
     // Sección del QR (fondo blanco)
     pdf.setFillColor(255, 255, 255)
-    pdf.rect(35, 50, 140, 140, 'F')
+    pdf.rect(35, 60, 140, 140, 'F')
 
     // Dibujar el QR
     const qrSize = 6.5
     const qrStartX = 40
-    const qrStartY = 55
+    const qrStartY = 65
     pdf.setFillColor(0, 0, 0)
     qrPattern.forEach((row, i) => {
       row.forEach((cell, j) => {
@@ -207,7 +208,7 @@ export default function Tickets() {
     })
 
     // Información del ticket
-    const infoStartY = 200
+    const infoStartY = 210
     pdf.setTextColor(255, 255, 255)
     pdf.setFontSize(12)
     pdf.setFont('helvetica', 'bold')
@@ -257,6 +258,8 @@ export default function Tickets() {
     pdf.setTextColor(100, 116, 139)
     pdf.setFont('helvetica', 'normal')
     pdf.text('Gracias por tu compra', pageWidth / 2, pageHeight - 30, { align: 'center' })
+    
+    pdf.setFontSize(9)
     pdf.text('www.infinitoopen.com.ar', pageWidth / 2, pageHeight - 20, { align: 'center' })
     pdf.text('Instagram: @infinitoopen', pageWidth / 2, pageHeight - 15, { align: 'center' })
     pdf.text('Tel: 3534 27-5749', pageWidth / 2, pageHeight - 10, { align: 'center' })
