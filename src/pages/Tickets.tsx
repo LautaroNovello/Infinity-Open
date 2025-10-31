@@ -1,6 +1,7 @@
 import { Ticket, X, User, Baby, Users as Elderly, Sparkles, QrCode, Calendar, CreditCard, ShieldCheck, Download, Search, Filter, Trash2 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import jsPDF from 'jspdf'
 
 interface StoredTicket {
   id: string
@@ -156,6 +157,112 @@ export default function Tickets() {
   const handleShowQR = (ticket: any) => {
     setSelectedTicket(ticket)
     setShowQR(true)
+  }
+
+  const handleDownloadTicket = () => {
+    if (!selectedTicket) return
+
+    // Crear el PDF
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    })
+
+    const pageWidth = pdf.internal.pageSize.getWidth()
+    const pageHeight = pdf.internal.pageSize.getHeight()
+
+    // Fondo degradado (simulado con rectángulos)
+    pdf.setFillColor(30, 41, 59) // #1e293b
+    pdf.rect(0, 0, pageWidth, pageHeight, 'F')
+
+    // Header con color azul-morado
+    pdf.setFillColor(37, 99, 235) // #2563eb
+    pdf.rect(0, 0, pageWidth, 40, 'F')
+
+    // Título
+    pdf.setTextColor(255, 255, 255)
+    pdf.setFontSize(28)
+    pdf.setFont('helvetica', 'bold')
+    pdf.text('🎢 Infinity Open', pageWidth / 2, 20, { align: 'center' })
+    pdf.setFontSize(14)
+    pdf.setFont('helvetica', 'normal')
+    pdf.text('Tu Entrada Digital', pageWidth / 2, 30, { align: 'center' })
+
+    // Sección del QR (fondo blanco)
+    pdf.setFillColor(255, 255, 255)
+    pdf.rect(35, 50, 140, 140, 'F')
+
+    // Dibujar el QR
+    const qrSize = 6.5
+    const qrStartX = 40
+    const qrStartY = 55
+    pdf.setFillColor(0, 0, 0)
+    qrPattern.forEach((row, i) => {
+      row.forEach((cell, j) => {
+        if (cell) {
+          pdf.rect(qrStartX + j * qrSize, qrStartY + i * qrSize, qrSize, qrSize, 'F')
+        }
+      })
+    })
+
+    // Información del ticket
+    const infoStartY = 200
+    pdf.setTextColor(255, 255, 255)
+    pdf.setFontSize(12)
+    pdf.setFont('helvetica', 'bold')
+
+    // Tipo
+    pdf.text('Tipo de Entrada:', 20, infoStartY)
+    pdf.setFont('helvetica', 'normal')
+    pdf.text(
+      selectedTicket.type === 'general' ? 'General' : selectedTicket.type === 'child' ? 'Niño' : 'Senior',
+      120,
+      infoStartY
+    )
+
+    // Fecha
+    pdf.setFont('helvetica', 'bold')
+    pdf.text('Fecha:', 20, infoStartY + 10)
+    pdf.setFont('helvetica', 'normal')
+    pdf.text(selectedTicket.date, 120, infoStartY + 10)
+
+    // Precio
+    pdf.setFont('helvetica', 'bold')
+    pdf.text('Precio:', 20, infoStartY + 20)
+    pdf.setFont('helvetica', 'normal')
+    pdf.setFontSize(14)
+    pdf.text(`$${selectedTicket.total.toLocaleString()}`, 120, infoStartY + 20)
+
+    // Número de entrada
+    pdf.setFontSize(12)
+    pdf.setFont('helvetica', 'bold')
+    pdf.text('Entrada:', 20, infoStartY + 30)
+    pdf.setFont('helvetica', 'normal')
+    pdf.text(`#${selectedTicket.ticketNumber} de ${selectedTicket.totalTickets}`, 120, infoStartY + 30)
+
+    // Línea separadora
+    pdf.setDrawColor(100, 116, 139)
+    pdf.setLineWidth(0.5)
+    pdf.line(20, infoStartY + 40, pageWidth - 20, infoStartY + 40)
+
+    // ID del ticket
+    pdf.setFontSize(8)
+    pdf.setTextColor(148, 163, 184)
+    pdf.setFont('courier', 'normal')
+    pdf.text(selectedTicket.id, pageWidth / 2, infoStartY + 50, { align: 'center' })
+
+    // Footer
+    pdf.setFontSize(10)
+    pdf.setTextColor(100, 116, 139)
+    pdf.setFont('helvetica', 'normal')
+    pdf.text('Gracias por tu compra', pageWidth / 2, pageHeight - 30, { align: 'center' })
+    pdf.text('www.infinitoopen.com.ar', pageWidth / 2, pageHeight - 20, { align: 'center' })
+    pdf.text('Instagram: @infinitoopen', pageWidth / 2, pageHeight - 15, { align: 'center' })
+    pdf.text('Tel: 3534 27-5749', pageWidth / 2, pageHeight - 10, { align: 'center' })
+
+    // Descargar el PDF
+    pdf.save(`entrada-${selectedTicket.id.slice(-8)}.pdf`)
   }
 
   const handleDeleteTicket = (ticketId: string) => {
@@ -349,7 +456,10 @@ export default function Tickets() {
             </div>
 
             {/* Botón de descarga */}
-            <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300">
+            <button 
+              onClick={handleDownloadTicket}
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300"
+            >
               <Download size={16} />
               Descargar Entrada
             </button>
