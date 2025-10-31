@@ -1,4 +1,4 @@
-import { Users, Clock, Thermometer, Droplets, TrendingUp, Star, MapPin, Zap } from 'lucide-react'
+import { Users, Clock, Thermometer, Droplets, TrendingUp, Star, Zap } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     {
       id: 1,
       name: 'Pileta de Olas',
-      image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&auto=format&fit=crop&q=80',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuApnHWu-M87w_1Lu0iKAe_6SPM4QgWNWxyGsvXlGyBxQhswS9tlgND8Ji-lmxZEBGVRH76T2pTot0FZRlL2OpZXo3umhyoxiJApMdY9MsDQ1tPjhvi35RUKSEeZJBZa8XEIJYwtHLjiNyGDb2STWKU_ICflJx5xErFX_QAGkrwlgcYnJYJrkbM4hi3xDhvF3ZflDsPIdvdOPmmfWj-ZvmeTFPWalArJI6soc_yzDsJ1GwZmO-v6XCsDKCQrIXs5YprorigMIVmqpH8',
       capacity: 85,
       description: 'Disfruta de olas artificiales en una pileta gigante. Perfecto para toda la familia.',
       rating: 4.8,
@@ -17,7 +17,7 @@ export default function Home() {
     {
       id: 2,
       name: 'Toboganes',
-      image: 'https://images.unsplash.com/photo-1587502537147-2ba64a117f59?w=800&auto=format&fit=crop&q=80',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCwhA23zdPRLbV22q0W-nrSFCYb3SBubErJoq4PtUf3SS9nqbffwuCke4F19YBRwFQJfRDSemRtFAd4f4bwDeqplQa4NEJSHACm6BtE2sWau96xJZBMPsPSIHq9pd5A44rPRmZOyupCkV4ZA0I_lkQ7x4wvKdZ3m8qX3zYkJyvscn4SBmPc5BxYRX0tIr6-VTAvqWEReU3XDG7BhI8wR63jLx7W0SevO8kKX4Y-9twj11BnsguHWAV_S9Kmk9tkmF8OjG_bfb-a7oE',
       capacity: 65,
       description: 'Toboganes de alta velocidad y giros emocionantes. Adrenalina pura.',
       rating: 4.9,
@@ -74,7 +74,6 @@ export default function Home() {
     weather: 'Soleado',
   }
 
-
   const getIntensityIcon = (intensity: string) => {
     if (intensity === 'Alta') return <Zap size={10} className="text-orange-500" />
     if (intensity === 'Media') return <TrendingUp size={10} className="text-blue-500" />
@@ -88,45 +87,103 @@ export default function Home() {
 
   return (
     <div className="animate-fade-in pb-20 bg-gray-50 dark:bg-[#0a0a1a]">
-      {/* Hero Section - Más compacto */}
-      <div className="relative w-full h-56 overflow-hidden bg-gray-200 dark:bg-gray-800">
+      {/* Hero Section - Mejorado */}
+      <div className="relative w-full h-80 overflow-hidden">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuACl2ra9Y_aSbsnNQ8LoF9dVNk_Dgk4Il4KY4guJnNkmGelIGuTazxj0K-waVYwFPT7aYD6VpfRlAcMwunIeaDfqBvPaENlp5J3zdeK3GrrwZ0qrljLiXiIoXweUr9aYCP_ur6b4P02DAIUQQG44k5zhz0qNlBYGsl1JGcuAfIQBhsIPJS0qDHnaDtQjIJTePBqNgggh92NZ9D8TRF1DdmZoIgtDhgEb4xFixasP9xRkb6Y9LGf4xFjFQ3U0JyS8LPU3WOLzZS2Db0"
           alt="Infinity Open Parque Acuático"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover animate-ken-burns"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-gray-50 dark:to-[#0a0a1a]" />
+        {/* Gradiente mejorado */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 dark:from-[#0a0a1a] via-transparent to-transparent" />
         
-        {/* Hero Content - Más compacto */}
-        <div className="absolute inset-0 flex flex-col justify-end p-4 pb-6">
-          <h1 className="text-white text-2xl font-bold leading-tight tracking-tight mb-1 drop-shadow-lg">
-            ¡Bienvenido a Infinity Open!
-          </h1>
-          <p className="text-white/90 text-sm font-medium drop-shadow-md">
-            Disfruta del mejor parque acuático
-          </p>
+        {/* Hero Content - Diseño moderno */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 pb-8">
+          <div className="space-y-4 animate-slide-up">
+            {/* Badge decorativo */}
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-xl px-5 py-2.5 rounded-full border-2 border-white/30 shadow-2xl">
+              <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
+              <span className="text-white text-sm font-bold tracking-wide">Parque Abierto</span>
+            </div>
+            
+            {/* Título principal con mejor contraste */}
+            <div className="relative">
+              {/* Sombra del texto para mejor legibilidad */}
+              <h1 className="text-transparent text-5xl font-black leading-tight tracking-tight absolute inset-0 blur-md bg-gradient-to-r from-black via-black to-black bg-clip-text">
+                ¡Bienvenido a<br />Infinity Open!
+              </h1>
+              {/* Texto principal */}
+              <h1 className="relative text-white text-5xl font-black leading-tight tracking-tight drop-shadow-2xl">
+                ¡Bienvenido a<br />
+                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}>
+                  Infinity Open!
+                </span>
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Stats Cards - Más compactas */}
-      <div className="px-4 -mt-10 relative z-10 mb-5">
-        <div className="grid grid-cols-2 gap-2.5">
-          <div className="bg-gradient-to-br from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-xl p-3 shadow-xl animate-slide-up backdrop-blur-sm">
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <Thermometer size={16} className="text-white" />
-              <span className="text-white/90 text-[10px] font-medium">Temperatura</span>
+      {/* Stats Cards - Diseño premium */}
+      <div className="px-4 -mt-24 relative z-10 mb-6">
+        <div className="grid grid-cols-2 gap-3">
+          {/* Tarjeta de Temperatura */}
+          <div className="group relative bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 dark:from-orange-600 dark:to-pink-600 rounded-3xl p-5 shadow-2xl animate-slide-up overflow-hidden">
+            {/* Efecto de brillo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-2">
+                <div className="bg-white/25 backdrop-blur-sm p-2 rounded-xl">
+                  <Thermometer size={20} className="text-white" strokeWidth={2.5} />
+                </div>
+                <div className="bg-white/20 px-2.5 py-1 rounded-full">
+                  <span className="text-white text-[10px] font-bold">HOY</span>
+                </div>
+              </div>
+              
+              <div className="space-y-0.5">
+                <p className="text-white/90 text-xs font-semibold uppercase tracking-wide">Temperatura</p>
+                <p className="text-white text-4xl font-black leading-none">{parkStats.temperature}°C</p>
+                <div className="flex items-center gap-1.5 mt-1.5">
+                  <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full animate-pulse"></div>
+                  <p className="text-white/95 text-xs font-medium">{parkStats.weather}</p>
+                </div>
+              </div>
             </div>
-            <p className="text-white text-xl font-bold">{parkStats.temperature}°C</p>
-            <p className="text-white/80 text-[10px] mt-0.5">{parkStats.weather}</p>
+            
+            {/* Decoración */}
+            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-500 to-cyan-500 dark:from-blue-600 dark:to-cyan-600 rounded-xl p-3 shadow-xl animate-slide-up backdrop-blur-sm" style={{ animationDelay: '50ms' }}>
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <Users size={16} className="text-white" />
-              <span className="text-white/90 text-[10px] font-medium">Aforo Promedio</span>
+          {/* Tarjeta de Aforo */}
+          <div className="group relative bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 dark:from-blue-600 dark:to-teal-600 rounded-3xl p-5 shadow-2xl animate-slide-up overflow-hidden" style={{ animationDelay: '100ms' }}>
+            {/* Efecto de brillo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-2">
+                <div className="bg-white/25 backdrop-blur-sm p-2 rounded-xl">
+                  <Users size={20} className="text-white" strokeWidth={2.5} />
+                </div>
+                <div className="bg-white/20 px-2.5 py-1 rounded-full">
+                  <span className="text-white text-[10px] font-bold">LIVE</span>
+                </div>
+              </div>
+              
+              <div className="space-y-0.5">
+                <p className="text-white/90 text-xs font-semibold uppercase tracking-wide">Aforo</p>
+                <p className="text-white text-4xl font-black leading-none">{parkStats.avgCapacity}%</p>
+                <div className="flex items-center gap-1.5 mt-1.5">
+                  <div className="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse"></div>
+                  <p className="text-white/95 text-xs font-medium">{parkStats.totalAttractions} atracciones</p>
+                </div>
+              </div>
             </div>
-            <p className="text-white text-xl font-bold">{parkStats.avgCapacity}%</p>
-            <p className="text-white/80 text-[10px] mt-0.5">{parkStats.totalAttractions} atracciones</p>
+            
+            {/* Decoración */}
+            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
           </div>
         </div>
       </div>
@@ -151,12 +208,11 @@ export default function Home() {
             style={{ animationDelay: `${index * 40}ms` }}
           >
             {/* Image compacta con overlay */}
-            <div className="relative h-32 overflow-hidden bg-gray-200 dark:bg-gray-700">
+            <div className="relative h-32 overflow-hidden">
               <img
                 src={attraction.image}
                 alt={attraction.name}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               
@@ -213,12 +269,6 @@ export default function Home() {
                 >
                   <div className="w-full h-full bg-white/30 animate-pulse-slow"></div>
                 </div>
-              </div>
-
-              {/* Action Button compacto */}
-              <div className="w-full bg-blue-600 dark:bg-primary text-white font-semibold py-1.5 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1.5 text-xs group-hover:bg-blue-700 dark:group-hover:bg-primary/90 group-hover:shadow-md">
-                <MapPin size={12} />
-                Ver Mapa
               </div>
             </div>
           </div>

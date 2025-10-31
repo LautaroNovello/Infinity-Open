@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Navigation, Plus, Minus, Users, Clock, Info } from 'lucide-react'
+import { Navigation, Plus, Minus, Users, Clock } from 'lucide-react'
 
 export default function Maps() {
   const location = useLocation()
@@ -26,12 +26,12 @@ export default function Maps() {
     {
       id: 1,
       name: 'Pileta de Olas',
-      icon: '�',
+      icon: '🌊',
       capacity: 85,
       color: 'bg-red-500',
       hoverColor: 'hover:bg-red-600',
-      top: '35%',
-      left: '30%',
+      top: '30%',
+      left: '25%',
       description: 'Disfruta de olas artificiales en una pileta gigante',
       waitTime: '15 min',
       image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&auto=format&fit=crop&q=80',
@@ -39,28 +39,28 @@ export default function Maps() {
     {
       id: 2,
       name: 'Toboganes',
-      icon: '�',
+      icon: '🎢',
       capacity: 65,
       color: 'bg-yellow-400',
       hoverColor: 'hover:bg-yellow-500',
-      top: '25%',
-      left: '68%',
+      top: '15%',
+      left: '70%',
       description: 'Toboganes de alta velocidad y giros emocionantes',
       waitTime: '20 min',
-      image: 'https://images.unsplash.com/photo-1587502537147-2ba64a117f59?w=800&auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 3,
       name: 'Río Lento',
-      icon: '�️',
+      icon: '🏞️',
       capacity: 72,
       color: 'bg-yellow-400',
       hoverColor: 'hover:bg-yellow-500',
       top: '65%',
-      left: '20%',
+      left: '15%',
       description: 'Relájate flotando en el río con corriente suave',
       waitTime: '5 min',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD1z5bFeB2JnC63g9ULMISyICtlvYLgurq12nG5DI7quPJ25U4_nzsl08RJlx_C9IytdbLZzrBgplBz5hHYs0qWhxxedWxu21AY8mbVx5DS1Z_LPWqUhIcZj1X7A782dAefx4CLVfA9q1OREQdVobzjsilFuPhHNg5APrOf5M51JX5OeXvBohnXwtjRFIlxbbu5_eaP4ftdGq_m_uMv8faAk0d_VEPhHADwggv-HEbXmLkLqX5PkTkgF7az8M25Rmfieb5q7gBWQkQ',
+      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 4,
@@ -69,11 +69,11 @@ export default function Maps() {
       capacity: 45,
       color: 'bg-green-500',
       hoverColor: 'hover:bg-green-600',
-      top: '70%',
-      left: '50%',
+      top: '68%',
+      left: '55%',
       description: 'Área segura con poca profundidad para los más pequeños',
       waitTime: '0 min',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBkSpt10DFsryk6MFwQtUcmNl-WuNjj-CJWfNozLUxHaD6OEE5Er0i3HDrWe7OVZfYZgdkgWxvx7h9lTkCro3ZcqqLsx_SAmcI1Gi0oBeYGTjT4XFyCOqvfmeZHmolgVF03ATX7hUzAYRAQWIOr0_-vMr8Y1uSFOn8YG212RVx7TcSpH7QToG1koppZWJZ63btB9pBAyti2I-EM8Z71dNyArWzXbW1yQTBopoH_ih0GgmkKO2835MMFUpJzNZVe23LCQKWY2BzL54I',
+      image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 5,
@@ -82,11 +82,11 @@ export default function Maps() {
       capacity: 90,
       color: 'bg-red-500',
       hoverColor: 'hover:bg-red-600',
-      top: '60%',
+      top: '55%',
       left: '75%',
       description: 'Múltiples jacuzzis con agua caliente',
       waitTime: '25 min',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCaTNnw6qeKbc_3n-xT9tXacXFnoiEmu0kYUsrmd0nElCZ9zB5r51Pny6p2Te1iq_jeVy0EuVsJjB6JV1PUOF-jJqSGQezwJ3Z36Fkd21Q-3Td9jmr8sQ2BO_hKSWeI86mN9lB5zP7ZM9ORWylDXSq-_ZMXTU5Nn4IPPb4L3To81kgKhlK5a-7JN8KgLiHkixsi5g9X-td3f4c_PgNyTG8sb-ObxjJOy8e1BDy6RhkIYimjUcjgqi9eRErRQtYQeednU_vk2aX0sRY',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 6,
@@ -95,11 +95,11 @@ export default function Maps() {
       capacity: 58,
       color: 'bg-yellow-400',
       hoverColor: 'hover:bg-yellow-500',
-      top: '45%',
+      top: '42%',
       left: '55%',
       description: 'Piscinas terapéuticas con chorros de agua',
       waitTime: '10 min',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC_7sF4ZQ7k_JLAkrrIUJUDo2Xi6ihrLcnHsooKxmF76erOhXZnpyspJzsJfF2W2ZH80QCeEbJNRiWIX-WQTMXJ6azhwmo7qofB8VyKC-8z-SP_XDrm1HHsYyfJi37lTaawJKCADE-ZQ_1Iwn4gDtekhqp2uzBrSw7voeA6AhZIdIeGDXFW6DycgxADnhL7cWBovM7AnRBm5Hho_25FPXkk6ysc1Ea_N6HuL_bmlfDHsXH3WUWSaREYi2bhgVxJM90oaHxqe0wUYbw',
+      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&auto=format&fit=crop&q=80',
     },
   ]
 
@@ -109,14 +109,22 @@ export default function Maps() {
     return 'bg-green-500 hover:bg-green-600'
   }
 
-  // Define paths between locations (as connections)
+  // Define paths between locations (as connections) - Recorrido lógico del parque
   const paths = [
-    { from: 1, to: 5, color: 'stroke-blue-400' }, // Montaña Rusa to Cafetería
-    { from: 5, to: 3, color: 'stroke-blue-400' }, // Cafetería to Castillo
-    { from: 5, to: 6, color: 'stroke-blue-400' }, // Cafetería to Área Infantil
-    { from: 2, to: 6, color: 'stroke-blue-400' }, // Restaurante to Área Infantil
-    { from: 6, to: 4, color: 'stroke-blue-400' }, // Área Infantil to Área Acuática
-    { from: 3, to: 4, color: 'stroke-blue-400' }, // Castillo to Área Acuática
+    // Entrada por Pileta de Olas (1) -> Centro de hidromasajes (6)
+    { from: 1, to: 6, color: 'stroke-blue-400' },
+    // Centro hidromasajes (6) -> Toboganes (2)
+    { from: 6, to: 2, color: 'stroke-blue-400' },
+    // Toboganes (2) -> Jacuzzis (5)
+    { from: 2, to: 5, color: 'stroke-blue-400' },
+    // Jacuzzis (5) -> Piletas Niños (4)
+    { from: 5, to: 4, color: 'stroke-blue-400' },
+    // Piletas Niños (4) -> Río Lento (3)
+    { from: 4, to: 3, color: 'stroke-blue-400' },
+    // Río Lento (3) -> Pileta de Olas (1) - Completa el circuito
+    { from: 3, to: 1, color: 'stroke-blue-400' },
+    // Conexión directa Centro: Hidromasajes (6) -> Piletas Niños (4)
+    { from: 6, to: 4, color: 'stroke-blue-400' },
   ]
 
   const getLocationCoords = (id: number) => {
@@ -289,10 +297,10 @@ export default function Maps() {
             style={{ transform: `scale(${zoom})` }}
           >
             {/* SVG for Paths - Google Maps style paths */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
               <defs>
                 <filter id="path-glow">
-                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -303,52 +311,115 @@ export default function Maps() {
                   <stop offset="50%" style={{ stopColor: '#5A9FFF', stopOpacity: 1 }} />
                   <stop offset="100%" style={{ stopColor: '#4285F4', stopOpacity: 0.9 }} />
                 </linearGradient>
+                <linearGradient id="pathGradientActive" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#10B981', stopOpacity: 1 }} />
+                  <stop offset="50%" style={{ stopColor: '#34D399', stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: '#10B981', stopOpacity: 1 }} />
+                </linearGradient>
               </defs>
               {paths.map((path, index) => {
                 const from = getLocationCoords(path.from)
                 const to = getLocationCoords(path.to)
                 const isActive = selectedLocation === path.from || selectedLocation === path.to
+                
+                // Calcular punto de control para curva suave
+                const controlX = (from.x + to.x) / 2 + ((to.y - from.y) * 0.2)
+                const controlY = (from.y + to.y) / 2 - ((to.x - from.x) * 0.15)
+                
+                const pathD = `M ${from.x},${from.y} Q ${controlX},${controlY} ${to.x},${to.y}`
+                
                 return (
                   <g key={index}>
-                    {/* Outer border - like Google Maps routes */}
-                    <line
-                      x1={`${from.x}%`}
-                      y1={`${from.y}%`}
-                      x2={`${to.x}%`}
-                      y2={`${to.y}%`}
-                      stroke="#1967D2"
-                      strokeWidth={isActive ? "10" : "8"}
+                    {/* Sombra exterior - efecto de profundidad */}
+                    <path
+                      d={pathD}
+                      stroke="#000000"
+                      strokeWidth={isActive ? "1.4" : "1.2"}
                       strokeLinecap="round"
-                      strokeOpacity="0.4"
+                      fill="none"
+                      strokeOpacity="0.1"
+                      transform="translate(0, 0.2)"
                     />
-                    {/* Main path */}
-                    <line
-                      x1={`${from.x}%`}
-                      y1={`${from.y}%`}
-                      x2={`${to.x}%`}
-                      y2={`${to.y}%`}
-                      stroke="url(#pathGradient)"
-                      strokeWidth={isActive ? "6" : "5"}
+                    {/* Borde exterior azul oscuro */}
+                    <path
+                      d={pathD}
+                      stroke="#1967D2"
+                      strokeWidth={isActive ? "1.2" : "1"}
                       strokeLinecap="round"
+                      fill="none"
+                      strokeOpacity="0.5"
+                    />
+                    {/* Línea principal con gradiente */}
+                    <path
+                      d={pathD}
+                      stroke={isActive ? "url(#pathGradientActive)" : "url(#pathGradient)"}
+                      strokeWidth={isActive ? "0.8" : "0.6"}
+                      strokeLinecap="round"
+                      fill="none"
                       style={{
                         filter: 'url(#path-glow)',
                         transition: 'all 0.3s ease',
                       }}
                     />
-                    {/* Animated walking dot */}
-                    {isActive && (
-                      <circle
-                        r="5"
-                        fill="#FFFFFF"
-                        stroke="#4285F4"
-                        strokeWidth="2"
-                      >
-                        <animateMotion
-                          dur="4s"
-                          repeatCount="indefinite"
-                          path={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
+                    {/* Línea interna blanca para dar efecto 3D */}
+                    <path
+                      d={pathD}
+                      stroke="rgba(255, 255, 255, 0.4)"
+                      strokeWidth={isActive ? "0.3" : "0.2"}
+                      strokeLinecap="round"
+                      fill="none"
+                      style={{
+                        transition: 'all 0.3s ease',
+                      }}
+                    />
+                    {/* Puntos decorativos a lo largo del camino */}
+                    {!isActive && (
+                      <>
+                        <circle
+                          cx={from.x + (to.x - from.x) * 0.25}
+                          cy={from.y + (to.y - from.y) * 0.25}
+                          r="0.3"
+                          fill="white"
+                          opacity="0.6"
                         />
-                      </circle>
+                        <circle
+                          cx={from.x + (to.x - from.x) * 0.75}
+                          cy={from.y + (to.y - from.y) * 0.75}
+                          r="0.3"
+                          fill="white"
+                          opacity="0.6"
+                        />
+                      </>
+                    )}
+                    {/* Punto animado cuando está activo */}
+                    {isActive && (
+                      <>
+                        <circle
+                          r="0.6"
+                          fill="#FFFFFF"
+                          stroke="#10B981"
+                          strokeWidth="0.3"
+                        >
+                          <animateMotion
+                            dur="3s"
+                            repeatCount="indefinite"
+                            path={pathD}
+                          />
+                        </circle>
+                        {/* Segundo punto animado desfasado */}
+                        <circle
+                          r="0.5"
+                          fill="#10B981"
+                          opacity="0.8"
+                        >
+                          <animateMotion
+                            dur="3s"
+                            begin="1.5s"
+                            repeatCount="indefinite"
+                            path={pathD}
+                          />
+                        </circle>
+                      </>
                     )}
                   </g>
                 )
@@ -464,111 +535,158 @@ export default function Maps() {
                         isSelected || isHovered ? 'scale-125' : 'scale-100 hover:scale-110'
                       }`}>
                         {/* Pin shadow */}
-                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-2 bg-black/30 rounded-full blur-sm" />
+                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-10 h-3 bg-black/40 rounded-full blur-md" />
                         
                         {/* Pin body - Different styles per location */}
                         <div className="relative">
-                          {/* Montaña Rusa - Classic teardrop pin */}
+                          {/* Pileta de Olas - Wave teardrop pin */}
                           {location.id === 1 && (
-                            <svg width="48" height="60" viewBox="0 0 48 60" fill="none" className="drop-shadow-lg">
+                            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" className="drop-shadow-2xl">
+                              <defs>
+                                <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#06B6D4" />
+                                  <stop offset="100%" stopColor="#0891B2" />
+                                </linearGradient>
+                              </defs>
                               <path
-                                d="M24 0C13.5 0 5 8.5 5 19C5 32 24 55 24 55C24 55 43 32 43 19C43 8.5 34.5 0 24 0Z"
-                                fill="#EF4444"
+                                d="M28 2C15.8 2 6 11.8 6 24C6 39 28 62 28 62C28 62 50 39 50 24C50 11.8 40.2 2 28 2Z"
+                                fill="url(#wave-gradient)"
                               />
-                              <circle cx="24" cy="19" r="10" fill="white" />
-                              <circle cx="24" cy="19" r="8" fill="#DC2626" />
-                              <text x="24" y="25" fontSize="16" textAnchor="middle" fill="white">🎢</text>
+                              <circle cx="28" cy="24" r="13" fill="white" />
+                              <circle cx="28" cy="24" r="11" fill="#0891B2" />
+                              {/* Wave pattern */}
+                              <path d="M20 24 Q22 21, 24 24 T28 24 T32 24 T36 24" stroke="white" strokeWidth="2" fill="none" />
+                              <text x="28" y="30" fontSize="18" textAnchor="middle" fill="white">🌊</text>
                             </svg>
                           )}
                           
-                          {/* Restaurante - Square with rounded corners */}
+                          {/* Toboganes - Slide shape */}
                           {location.id === 2 && (
-                            <svg width="48" height="56" viewBox="0 0 48 56" fill="none" className="drop-shadow-lg">
-                              <rect x="6" y="4" width="36" height="36" rx="8" fill="#FBBF24" />
-                              <rect x="10" y="8" width="28" height="28" rx="6" fill="white" />
-                              <rect x="12" y="10" width="24" height="24" rx="5" fill="#F59E0B" />
-                              <path d="M24 40 L24 52" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" />
-                              <circle cx="24" cy="52" r="2" fill="#F59E0B" />
-                              <text x="24" y="28" fontSize="16" textAnchor="middle" fill="white">🍽️</text>
+                            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" className="drop-shadow-2xl">
+                              <defs>
+                                <linearGradient id="slide-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#F59E0B" />
+                                  <stop offset="100%" stopColor="#D97706" />
+                                </linearGradient>
+                              </defs>
+                              <path
+                                d="M28 2C15.8 2 6 11.8 6 24C6 39 28 62 28 62C28 62 50 39 50 24C50 11.8 40.2 2 28 2Z"
+                                fill="url(#slide-gradient)"
+                              />
+                              <circle cx="28" cy="24" r="13" fill="white" />
+                              <circle cx="28" cy="24" r="11" fill="#F59E0B" />
+                              {/* Slide lines */}
+                              <path d="M22 20 Q24 26, 26 20" stroke="white" strokeWidth="1.5" fill="none" />
+                              <path d="M28 20 Q30 26, 32 20" stroke="white" strokeWidth="1.5" fill="none" />
+                              <text x="28" y="31" fontSize="18" textAnchor="middle" fill="white">🎢</text>
                             </svg>
                           )}
                           
-                          {/* Castillo - Shield/badge shape */}
+                          {/* Río Lento - River flow shape */}
                           {location.id === 3 && (
-                            <svg width="48" height="58" viewBox="0 0 48 58" fill="none" className="drop-shadow-lg">
+                            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" className="drop-shadow-2xl">
+                              <defs>
+                                <linearGradient id="river-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#10B981" />
+                                  <stop offset="100%" stopColor="#059669" />
+                                </linearGradient>
+                              </defs>
                               <path
-                                d="M24 4 L8 10 L8 25 C8 37 24 52 24 52 C24 52 40 37 40 25 L40 10 Z"
-                                fill="#10B981"
+                                d="M28 2C15.8 2 6 11.8 6 24C6 39 28 62 28 62C28 62 50 39 50 24C50 11.8 40.2 2 28 2Z"
+                                fill="url(#river-gradient)"
                               />
-                              <path
-                                d="M24 8 L12 12 L12 24 C12 33 24 46 24 46 C24 46 36 33 36 24 L36 12 Z"
-                                fill="white"
-                              />
-                              <path
-                                d="M24 10 L14 13 L14 23 C14 30 24 42 24 42 C24 42 34 30 34 23 L34 13 Z"
-                                fill="#059669"
-                              />
-                              <text x="24" y="27" fontSize="14" textAnchor="middle" fill="white">🏰</text>
+                              <circle cx="28" cy="24" r="13" fill="white" />
+                              <circle cx="28" cy="24" r="11" fill="#10B981" />
+                              {/* River flow lines */}
+                              <path d="M20 22 Q24 20, 28 22 T36 22" stroke="white" strokeWidth="1.5" fill="none" opacity="0.7" />
+                              <path d="M20 26 Q24 28, 28 26 T36 26" stroke="white" strokeWidth="1.5" fill="none" opacity="0.7" />
+                              <text x="28" y="31" fontSize="18" textAnchor="middle" fill="white">🏞️</text>
                             </svg>
                           )}
                           
-                          {/* Área Acuática - Water drop shape */}
+                          {/* Piletas Niños - Cute rounded shape */}
                           {location.id === 4 && (
-                            <svg width="48" height="62" viewBox="0 0 48 62" fill="none" className="drop-shadow-lg">
+                            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" className="drop-shadow-2xl">
+                              <defs>
+                                <linearGradient id="kids-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#F472B6" />
+                                  <stop offset="100%" stopColor="#EC4899" />
+                                </linearGradient>
+                              </defs>
                               <path
-                                d="M24 2 C24 2 8 20 8 32 C8 42 15 50 24 50 C33 50 40 42 40 32 C40 20 24 2 24 2 Z"
-                                fill="#EF4444"
+                                d="M28 2C15.8 2 6 11.8 6 24C6 39 28 62 28 62C28 62 50 39 50 24C50 11.8 40.2 2 28 2Z"
+                                fill="url(#kids-gradient)"
                               />
-                              <path
-                                d="M24 8 C24 8 12 22 12 31 C12 38 17 44 24 44 C31 44 36 38 36 31 C36 22 24 8 24 8 Z"
-                                fill="white"
-                              />
-                              <path
-                                d="M24 12 C24 12 15 24 15 30 C15 35 19 39 24 39 C29 39 33 35 33 30 C33 24 24 12 24 12 Z"
-                                fill="#DC2626"
-                              />
-                              <path d="M24 50 L24 58" stroke="#DC2626" strokeWidth="3" strokeLinecap="round" />
-                              <text x="24" y="32" fontSize="14" textAnchor="middle" fill="white">🌊</text>
+                              <circle cx="28" cy="24" r="13" fill="white" />
+                              <circle cx="28" cy="24" r="11" fill="#EC4899" />
+                              {/* Cute circles pattern */}
+                              <circle cx="23" cy="20" r="2" fill="white" opacity="0.8" />
+                              <circle cx="33" cy="20" r="2" fill="white" opacity="0.8" />
+                              <circle cx="28" cy="27" r="1.5" fill="white" opacity="0.8" />
+                              <text x="28" y="31" fontSize="18" textAnchor="middle" fill="white">👶</text>
                             </svg>
                           )}
                           
-                          {/* Cafetería - Coffee cup shape */}
+                          {/* Jacuzzis - Hot water bubbles */}
                           {location.id === 5 && (
-                            <svg width="48" height="58" viewBox="0 0 48 58" fill="none" className="drop-shadow-lg">
-                              <rect x="8" y="12" width="28" height="28" rx="4" fill="#D97706" />
-                              <rect x="11" y="15" width="22" height="22" rx="3" fill="white" />
-                              <rect x="13" y="17" width="18" height="18" rx="2" fill="#B45309" />
-                              <path d="M36 20 L40 20 C42 20 43 22 43 24 C43 26 42 28 40 28 L36 28" stroke="#D97706" strokeWidth="3" />
-                              <path d="M12 40 L32 40 L30 52 L14 52 Z" fill="#D97706" />
-                              <path d="M10 52 L34 52" stroke="#D97706" strokeWidth="3" strokeLinecap="round" />
-                              <text x="22" y="32" fontSize="13" textAnchor="middle" fill="white">☕</text>
+                            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" className="drop-shadow-2xl">
+                              <defs>
+                                <linearGradient id="jacuzzi-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#EF4444" />
+                                  <stop offset="100%" stopColor="#DC2626" />
+                                </linearGradient>
+                              </defs>
+                              <path
+                                d="M28 2C15.8 2 6 11.8 6 24C6 39 28 62 28 62C28 62 50 39 50 24C50 11.8 40.2 2 28 2Z"
+                                fill="url(#jacuzzi-gradient)"
+                              />
+                              <circle cx="28" cy="24" r="13" fill="white" />
+                              <circle cx="28" cy="24" r="11" fill="#DC2626" />
+                              {/* Steam waves */}
+                              <path d="M23 18 Q23 15, 23 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8" />
+                              <path d="M28 16 Q28 13, 28 11" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8" />
+                              <path d="M33 18 Q33 15, 33 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8" />
+                              <text x="28" y="32" fontSize="18" textAnchor="middle" fill="white">♨️</text>
                             </svg>
                           )}
                           
-                          {/* Área Infantil - Star/fun shape */}
+                          {/* Hidromasajes - Spa luxury */}
                           {location.id === 6 && (
-                            <svg width="50" height="60" viewBox="0 0 50 60" fill="none" className="drop-shadow-lg">
+                            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" className="drop-shadow-2xl">
+                              <defs>
+                                <linearGradient id="hydro-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#8B5CF6" />
+                                  <stop offset="100%" stopColor="#7C3AED" />
+                                </linearGradient>
+                              </defs>
                               <path
-                                d="M25 2 L29 18 L45 18 L32 28 L37 44 L25 34 L13 44 L18 28 L5 18 L21 18 Z"
-                                fill="#A855F7"
+                                d="M28 2C15.8 2 6 11.8 6 24C6 39 28 62 28 62C28 62 50 39 50 24C50 11.8 40.2 2 28 2Z"
+                                fill="url(#hydro-gradient)"
                               />
-                              <path
-                                d="M25 6 L28 18 L40 18 L30 25 L34 37 L25 30 L16 37 L20 25 L10 18 L22 18 Z"
-                                fill="white"
-                              />
-                              <path
-                                d="M25 9 L27 17 L35 17 L28 22 L31 30 L25 25 L19 30 L22 22 L15 17 L23 17 Z"
-                                fill="#9333EA"
-                              />
-                              <path d="M25 44 L25 56" stroke="#9333EA" strokeWidth="4" strokeLinecap="round" />
-                              <circle cx="25" cy="56" r="2" fill="#9333EA" />
-                              <text x="25" y="27" fontSize="12" textAnchor="middle" fill="white">🎪</text>
+                              <circle cx="28" cy="24" r="13" fill="white" />
+                              <circle cx="28" cy="24" r="11" fill="#8B5CF6" />
+                              {/* Massage jets */}
+                              <circle cx="22" cy="21" r="1.5" fill="white" opacity="0.8" />
+                              <circle cx="28" cy="19" r="1.5" fill="white" opacity="0.8" />
+                              <circle cx="34" cy="21" r="1.5" fill="white" opacity="0.8" />
+                              <circle cx="24" cy="26" r="1.5" fill="white" opacity="0.8" />
+                              <circle cx="32" cy="26" r="1.5" fill="white" opacity="0.8" />
+                              <text x="28" y="32" fontSize="18" textAnchor="middle" fill="white">💆</text>
                             </svg>
                           )}
 
                           {/* Pulse effect when selected */}
                           {isSelected && (
-                            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-blue-500 animate-ping opacity-50" />
+                            <>
+                              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-blue-400 animate-ping opacity-50" />
+                              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full border-4 border-green-400 animate-ping opacity-30" 
+                                   style={{ animationDelay: '0.5s' }} />
+                            </>
+                          )}
+                          
+                          {/* Hover glow */}
+                          {isHovered && !isSelected && (
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white/30 animate-pulse" />
                           )}
                         </div>
                       </div>
@@ -597,113 +715,6 @@ export default function Maps() {
           <button className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 backdrop-blur-md rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/40 hover:shadow-2xl active:scale-95">
             <Navigation size={26} className="text-white" />
           </button>
-        </div>
-
-        {/* Info Button */}
-        <div className="absolute top-4 left-4 z-30">
-          <button className="w-14 h-14 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition-all hover:shadow-blue-500/20 hover:shadow-2xl active:scale-95 border border-gray-200 dark:border-gray-700">
-            <Info size={26} className="text-gray-700 dark:text-gray-300" />
-          </button>
-        </div>
-
-        {/* Enhanced Attractions Panel - Collapsible & Modern */}
-        <div className="absolute bottom-4 left-4 z-30 max-w-xs">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <h3 className="text-sm font-bold text-white">Estado en Vivo</h3>
-                </div>
-                <div className="text-xs text-blue-100 font-medium">
-                  {locations.filter(l => l.capacity < 40).length} disponibles
-                </div>
-              </div>
-            </div>
-
-            {/* Attractions List - Compact */}
-            <div className="p-3 max-h-64 overflow-y-auto">
-              <div className="space-y-2">
-                {locations.map((location) => (
-                  <button
-                    key={location.id}
-                    onClick={() => setSelectedLocation(selectedLocation === location.id ? null : location.id)}
-                    className={`w-full flex items-center gap-3 p-2.5 rounded-xl transition-all duration-300 ${
-                      selectedLocation === location.id 
-                        ? 'bg-blue-50 dark:bg-blue-900/30 ring-2 ring-blue-500 scale-[1.02]' 
-                        : 'hover:bg-gray-50 dark:hover:bg-slate-700/50'
-                    }`}
-                  >
-                    {/* Icon */}
-                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-600 rounded-xl flex items-center justify-center shadow-sm">
-                      <span className="text-xl">{location.icon}</span>
-                    </div>
-
-                    {/* Info */}
-                    <div className="flex-1 min-w-0 text-left">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs font-semibold text-gray-900 dark:text-white truncate">
-                          {location.name}
-                        </span>
-                        <span className="text-[10px] text-gray-500 dark:text-gray-400 ml-1 flex-shrink-0">
-                          {location.waitTime}
-                        </span>
-                      </div>
-                      
-                      {/* Capacity Bar */}
-                      <div className="flex items-center gap-2">
-                        <div className="flex-1 h-1.5 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                          <div 
-                            className={`h-full transition-all duration-500 ${
-                              location.capacity >= 70 ? 'bg-red-500' :
-                              location.capacity >= 40 ? 'bg-yellow-400' :
-                              'bg-green-500'
-                            }`}
-                            style={{ width: `${location.capacity}%` }}
-                          />
-                        </div>
-                        <span className={`text-[10px] font-bold flex-shrink-0 ${
-                          location.capacity >= 70 ? 'text-red-600 dark:text-red-400' :
-                          location.capacity >= 40 ? 'text-yellow-600 dark:text-yellow-400' :
-                          'text-green-600 dark:text-green-400'
-                        }`}>
-                          {location.capacity}%
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Status indicator */}
-                    <div className="flex-shrink-0">
-                      <div className={`w-2 h-2 rounded-full ${
-                        location.capacity >= 70 ? 'bg-red-500' :
-                        location.capacity >= 40 ? 'bg-yellow-400' :
-                        'bg-green-500'
-                      }`} />
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Legend Footer */}
-            <div className="px-4 py-2.5 bg-gray-50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between text-[10px]">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span className="text-gray-600 dark:text-gray-400">Baja</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-yellow-400" />
-                  <span className="text-gray-600 dark:text-gray-400">Media</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-500" />
-                  <span className="text-gray-600 dark:text-gray-400">Alta</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </main>
     </div>
