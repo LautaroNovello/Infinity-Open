@@ -35,14 +35,17 @@ export default function Header() {
 
   return (
     <header className="flex items-center p-4 pb-2 justify-between sticky top-0 bg-gray-100 dark:bg-[#111122] z-10">
-      <div className="flex items-center gap-3">
+      <button 
+        onClick={() => navigate('/')}
+        className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+      >
         <div className="w-10 h-10 flex-shrink-0">
           <img src="/logo1.png" alt="Infinity Open Logo" className="w-full h-full object-contain" />
         </div>
         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
           Infinity Open
         </h1>
-      </div>
+      </button>
       <div className="flex-1"></div>
       <div className="flex items-center gap-2">
         <button

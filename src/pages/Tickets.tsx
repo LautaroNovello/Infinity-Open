@@ -1,4 +1,4 @@
-import { Ticket, X, User, Baby, Users as Elderly, Sparkles, QrCode, Calendar, CreditCard, ShieldCheck, Download, Search, Filter, Edit2, Trash2 } from 'lucide-react'
+import { Ticket, X, User, Baby, Users as Elderly, Sparkles, QrCode, Calendar, CreditCard, ShieldCheck, Download, Search, Filter, Trash2 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -24,7 +24,6 @@ export default function Tickets() {
   const [myTickets, setMyTickets] = useState<StoredTicket[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [filterType, setFilterType] = useState<'all' | 'general' | 'child' | 'senior'>('all')
-  const [editingTicket, setEditingTicket] = useState<string | null>(null)
   
   // Cargar entradas guardadas
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function Tickets() {
   
   // Estado para Nueva Entrada
   const [newTickets, setNewTickets] = useState({
-    general: 1,
+    general: 0,
     child: 0,
     senior: 0,
   })
@@ -177,19 +176,6 @@ export default function Tickets() {
   const cancelDelete = () => {
     setShowDeleteConfirm(false)
     setTicketToDelete(null)
-  }
-
-  const handleEditTicket = (ticketId: string) => {
-    setEditingTicket(ticketId)
-  }
-
-  const saveEditTicket = (ticketId: string, newDate: string) => {
-    const updatedTickets = myTickets.map(ticket => 
-      ticket.id === ticketId ? { ...ticket, date: newDate } : ticket
-    )
-    setMyTickets(updatedTickets)
-    localStorage.setItem('myTickets', JSON.stringify(updatedTickets))
-    setEditingTicket(null)
   }
 
   // Filtrar entradas
@@ -596,38 +582,10 @@ export default function Tickets() {
                         <h3 className="text-gray-900 dark:text-white text-xl font-bold leading-normal mb-1">
                           Entrada {ticket.type === 'general' ? 'General' : ticket.type === 'child' ? 'Niño' : 'Senior'}
                         </h3>
-                        {editingTicket === ticket.id ? (
-                          <div className="flex items-center gap-2 mt-1">
-                            <Calendar size={16} className="text-gray-600 dark:text-gray-400" />
-                            <input
-                              type="date"
-                              defaultValue={new Date(ticket.date.split('/').reverse().join('-')).toISOString().split('T')[0]}
-                              onBlur={(e) => {
-                                const newDate = new Date(e.target.value).toLocaleDateString('es-ES')
-                                saveEditTicket(ticket.id, newDate)
-                              }}
-                              onKeyDown={(e) => {
-                                if (e.key === 'Enter') {
-                                  const newDate = new Date((e.target as HTMLInputElement).value).toLocaleDateString('es-ES')
-                                  saveEditTicket(ticket.id, newDate)
-                                }
-                              }}
-                              className="px-2 py-1 text-sm rounded-lg bg-white dark:bg-gray-700 border border-blue-500 dark:border-purple-500 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-purple-500"
-                              autoFocus
-                            />
-                            <button
-                              onClick={() => setEditingTicket(null)}
-                              className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                            >
-                              <X size={16} className="text-gray-600 dark:text-gray-400" />
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
-                            <Calendar size={16} />
-                            <span>{ticket.date}</span>
-                          </div>
-                        )}
+                        <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
+                          <Calendar size={16} />
+                          <span>{ticket.date}</span>
+                        </div>
                         <div className="flex items-center gap-2 text-gray-500 dark:text-gray-500 text-xs mt-2">
                           <span className="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-md font-medium">
                             #{ticket.ticketNumber} de {ticket.totalTickets}
@@ -652,20 +610,13 @@ export default function Tickets() {
                     </div>
 
                     {/* Botones de acción */}
-                    <div className="grid grid-cols-3 gap-2 mb-4">
+                    <div className="grid grid-cols-2 gap-2 mb-4">
                       <button
                         onClick={() => handleShowQR(ticket)}
                         className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300"
                       >
                         <QrCode size={18} />
                         <span className="text-sm">Ver QR</span>
-                      </button>
-                      <button
-                        onClick={() => handleEditTicket(ticket.id)}
-                        className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/50 transform hover:scale-105 transition-all duration-300"
-                      >
-                        <Edit2 size={18} />
-                        <span className="text-sm">Editar</span>
                       </button>
                       <button
                         onClick={() => handleDeleteTicket(ticket.id)}

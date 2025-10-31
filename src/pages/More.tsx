@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { 
   Users, Bell, Clock, ChevronRight, MapPin, 
-  MessageCircle, LogOut, Phone, Instagram
+  MessageCircle, LogOut, Phone, Instagram, Globe
 } from 'lucide-react'
 
 interface MenuItem {
@@ -190,8 +190,11 @@ export default function More() {
             <a href="tel:+543534275749" className="p-3 rounded-full bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
               <Phone className="text-green-600 dark:text-green-400" size={22} />
             </a>
-            <a href="https://www.instagram.com/lautaronovello/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-pink-100 dark:bg-pink-900/30 hover:bg-pink-200 dark:hover:bg-pink-900/50 transition-colors">
+            <a href="https://www.instagram.com/infinitoopen/?hl=es" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-pink-100 dark:bg-pink-900/30 hover:bg-pink-200 dark:hover:bg-pink-900/50 transition-colors">
               <Instagram className="text-pink-600 dark:text-pink-400" size={22} />
+            </a>
+            <a href="https://infinitoopen.com.ar/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
+              <Globe className="text-blue-600 dark:text-blue-400" size={22} />
             </a>
           </div>
 
