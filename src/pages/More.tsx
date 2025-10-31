@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
 import { 
-  Users, Bell, Clock, ChevronRight, MapPin, Star, 
-  Settings, MessageCircle, LogOut,
-  Moon, Sun, Phone
+  Users, Bell, Clock, ChevronRight, MapPin, 
+  MessageCircle, LogOut, Phone
 } from 'lucide-react'
-import { useState } from 'react'
 
 interface MenuItem {
   id: number
@@ -20,14 +18,12 @@ interface MenuItem {
 }
 
 export default function More() {
-  const [darkMode, setDarkMode] = useState(
-    document.documentElement.classList.contains('dark')
-  )
-
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle('dark')
-    setDarkMode(!darkMode)
-    localStorage.setItem('theme', darkMode ? 'light' : 'dark')
+  const handleLogout = () => {
+    // Limpiar datos de sesión
+    localStorage.removeItem('userToken')
+    localStorage.removeItem('userData')
+    // Redirigir a login
+    window.location.href = '/login'
   }
 
   const primaryOptions: MenuItem[] = [
@@ -60,16 +56,6 @@ export default function More() {
       bgColor: 'bg-gradient-to-br from-red-500 to-red-600',
       badge: '3',
     },
-    {
-      id: 4,
-      title: 'Mapa Interactivo',
-      description: 'Encuentra ubicaciones',
-      icon: MapPin,
-      path: '/maps',
-      color: 'text-green-600 dark:text-green-400',
-      bgColor: 'bg-gradient-to-br from-green-500 to-green-600',
-      isNew: true,
-    },
   ]
 
   const supportOptions: MenuItem[] = [
@@ -81,25 +67,6 @@ export default function More() {
       path: 'tel:+543534275749',
       color: 'text-teal-600 dark:text-teal-400',
       bgColor: 'bg-gradient-to-br from-teal-500 to-teal-600',
-    },
-  ]
-
-  const quickActions = [
-    {
-      id: 'theme',
-      title: darkMode ? 'Modo Claro' : 'Modo Oscuro',
-      icon: darkMode ? Sun : Moon,
-      action: toggleDarkMode,
-      color: 'text-yellow-600 dark:text-yellow-400',
-      bgColor: 'bg-gradient-to-br from-yellow-500 to-amber-500',
-    },
-    {
-      id: 'settings',
-      title: 'Configuración',
-      icon: Settings,
-      action: () => alert('Configuración de la aplicación'),
-      color: 'text-gray-600 dark:text-gray-400',
-      bgColor: 'bg-gradient-to-br from-gray-500 to-slate-500',
     },
   ]
 
@@ -186,37 +153,6 @@ export default function More() {
           </p>
         </div>
 
-        {/* Acciones Rápidas */}
-        <div className="mb-8">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-            <Star className="text-yellow-500" size={24} />
-            Acciones Rápidas
-          </h2>
-          <div className="grid grid-cols-2 gap-3">
-            {quickActions.map((action, index) => (
-              <button
-                key={action.id}
-                onClick={action.action}
-                className="group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-4 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 dark:border-gray-700 transform hover:scale-105 transition-all duration-300 overflow-hidden"
-                style={{ 
-                  animationDelay: `${index * 50}ms`,
-                  animation: 'slideInUp 0.5s ease-out forwards'
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <div className="relative flex flex-col items-center gap-3">
-                  <div className={`w-14 h-14 rounded-2xl ${action.bgColor} flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300`}>
-                    <action.icon className="text-white" size={26} />
-                  </div>
-                  <span className="text-sm font-semibold text-gray-900 dark:text-white text-center">
-                    {action.title}
-                  </span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Opciones Principales */}
         <div className="mb-8">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
@@ -263,7 +199,10 @@ export default function More() {
         </div>
 
         {/* Botón de Cerrar Sesión */}
-        <button className="w-full mt-6 flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold hover:shadow-2xl hover:shadow-red-500/50 transform hover:scale-105 transition-all duration-300">
+        <button 
+          onClick={handleLogout}
+          className="w-full mt-6 flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold hover:shadow-2xl hover:shadow-red-500/50 transform hover:scale-105 transition-all duration-300"
+        >
           <LogOut size={22} />
           Cerrar Sesión
         </button>
