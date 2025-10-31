@@ -1,11 +1,13 @@
-import { LogOut, User } from 'lucide-react'
+import { LogOut, User, Moon, Sun } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { useTheme } from '../hooks/useTheme'
 
 export default function Header() {
   const navigate = useNavigate()
   const [showMenu, setShowMenu] = useState(false)
   const userEmail = localStorage.getItem('userEmail') || 'Usuario'
+  const { theme, toggleTheme } = useTheme()
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated')
@@ -24,18 +26,26 @@ export default function Header() {
         </h1>
       </div>
       <div className="flex-1"></div>
-      <div className="relative">
+      <div className="flex items-center gap-2">
         <button
-          onClick={() => setShowMenu(!showMenu)}
-          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 dark:bg-primary text-white hover:bg-blue-700 dark:hover:bg-primary/90 transition-colors"
+          onClick={toggleTheme}
+          className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+          aria-label={theme === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}
         >
-          <User size={18} />
-          <span className="text-sm font-medium max-w-[100px] truncate hidden sm:inline">
-            {userEmail.split('@')[0]}
-          </span>
+          {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
         </button>
-        
-        {showMenu && (
+        <div className="relative">
+          <button
+            onClick={() => setShowMenu(!showMenu)}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 dark:bg-primary text-white hover:bg-blue-700 dark:hover:bg-primary/90 transition-colors"
+          >
+            <User size={18} />
+            <span className="text-sm font-medium max-w-[100px] truncate hidden sm:inline">
+              {userEmail.split('@')[0]}
+            </span>
+          </button>
+          
+          {showMenu && (
           <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden animate-slide-up">
             <div className="p-3 border-b border-gray-200 dark:border-gray-700">
               <p className="text-sm text-gray-500 dark:text-gray-400">Sesión iniciada como:</p>
@@ -50,6 +60,7 @@ export default function Header() {
             </button>
           </div>
         )}
+        </div>
       </div>
     </header>
   )

@@ -1,89 +1,105 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Navigation, Plus, Minus, Users, Clock, Info } from 'lucide-react'
 
 export default function Maps() {
+  const location = useLocation()
   const [zoom, setZoom] = useState(1)
   const [selectedLocation, setSelectedLocation] = useState<number | null>(null)
   const [hoveredLocation, setHoveredLocation] = useState<number | null>(null)
 
+  // Recibir la atracción seleccionada desde Home
+  useEffect(() => {
+    if (location.state?.attractionId) {
+      setSelectedLocation(location.state.attractionId)
+      // Scroll suave al detalle
+      setTimeout(() => {
+        const element = document.getElementById('location-detail')
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 300)
+    }
+  }, [location.state])
+
   const locations = [
     {
       id: 1,
-      name: 'Montaña Rusa',
-      icon: '🎢',
+      name: 'Pileta de Olas',
+      icon: '�',
       capacity: 85,
       color: 'bg-red-500',
       hoverColor: 'hover:bg-red-600',
       top: '35%',
       left: '30%',
-      description: 'Atracción de alta velocidad',
-      waitTime: '45 min',
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="240"%3E%3Cdefs%3E%3ClinearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:rgb(239,68,68);stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:rgb(220,38,38);stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="240" fill="url(%23grad1)"/%3E%3Ctext x="200" y="140" font-size="100" text-anchor="middle" dominant-baseline="middle" fill="white" opacity="0.9"%3E🎢%3C/text%3E%3C/svg%3E',
+      description: 'Disfruta de olas artificiales en una pileta gigante',
+      waitTime: '15 min',
+      image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 2,
-      name: 'Restaurante',
-      icon: '🍽️',
-      capacity: 55,
+      name: 'Toboganes',
+      icon: '�',
+      capacity: 65,
+      color: 'bg-yellow-400',
+      hoverColor: 'hover:bg-yellow-500',
+      top: '25%',
+      left: '68%',
+      description: 'Toboganes de alta velocidad y giros emocionantes',
+      waitTime: '20 min',
+      image: 'https://images.unsplash.com/photo-1587502537147-2ba64a117f59?w=800&auto=format&fit=crop&q=80',
+    },
+    {
+      id: 3,
+      name: 'Río Lento',
+      icon: '�️',
+      capacity: 72,
       color: 'bg-yellow-400',
       hoverColor: 'hover:bg-yellow-500',
       top: '65%',
       left: '20%',
-      description: 'Comida y bebidas',
-      waitTime: '15 min',
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="240"%3E%3Cdefs%3E%3ClinearGradient id="grad2" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:rgb(251,191,36);stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:rgb(245,158,11);stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="240" fill="url(%23grad2)"/%3E%3Ctext x="200" y="140" font-size="100" text-anchor="middle" dominant-baseline="middle" fill="white" opacity="0.9"%3E🍽️%3C/text%3E%3C/svg%3E',
-    },
-    {
-      id: 3,
-      name: 'Castillo',
-      icon: '🏰',
-      capacity: 25,
-      color: 'bg-green-500',
-      hoverColor: 'hover:bg-green-600',
-      top: '25%',
-      left: '68%',
-      description: 'Tour histórico',
-      waitTime: '10 min',
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="240"%3E%3Cdefs%3E%3ClinearGradient id="grad3" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:rgb(34,197,94);stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:rgb(22,163,74);stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="240" fill="url(%23grad3)"/%3E%3Ctext x="200" y="140" font-size="100" text-anchor="middle" dominant-baseline="middle" fill="white" opacity="0.9"%3E🏰%3C/text%3E%3C/svg%3E',
+      description: 'Relájate flotando en el río con corriente suave',
+      waitTime: '5 min',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD1z5bFeB2JnC63g9ULMISyICtlvYLgurq12nG5DI7quPJ25U4_nzsl08RJlx_C9IytdbLZzrBgplBz5hHYs0qWhxxedWxu21AY8mbVx5DS1Z_LPWqUhIcZj1X7A782dAefx4CLVfA9q1OREQdVobzjsilFuPhHNg5APrOf5M51JX5OeXvBohnXwtjRFIlxbbu5_eaP4ftdGq_m_uMv8faAk0d_VEPhHADwggv-HEbXmLkLqX5PkTkgF7az8M25Rmfieb5q7gBWQkQ',
     },
     {
       id: 4,
-      name: 'Área Acuática',
-      icon: '🌊',
+      name: 'Piletas para Niños',
+      icon: '👶',
+      capacity: 45,
+      color: 'bg-green-500',
+      hoverColor: 'hover:bg-green-600',
+      top: '70%',
+      left: '50%',
+      description: 'Área segura con poca profundidad para los más pequeños',
+      waitTime: '0 min',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBkSpt10DFsryk6MFwQtUcmNl-WuNjj-CJWfNozLUxHaD6OEE5Er0i3HDrWe7OVZfYZgdkgWxvx7h9lTkCro3ZcqqLsx_SAmcI1Gi0oBeYGTjT4XFyCOqvfmeZHmolgVF03ATX7hUzAYRAQWIOr0_-vMr8Y1uSFOn8YG212RVx7TcSpH7QToG1koppZWJZ63btB9pBAyti2I-EM8Z71dNyArWzXbW1yQTBopoH_ih0GgmkKO2835MMFUpJzNZVe23LCQKWY2BzL54I',
+    },
+    {
+      id: 5,
+      name: 'Jacuzzis',
+      icon: '♨️',
       capacity: 90,
       color: 'bg-red-500',
       hoverColor: 'hover:bg-red-600',
       top: '60%',
       left: '75%',
-      description: 'Toboganes y piscinas',
-      waitTime: '50 min',
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="240"%3E%3Cdefs%3E%3ClinearGradient id="grad4" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:rgb(59,130,246);stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:rgb(37,99,235);stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="240" fill="url(%23grad4)"/%3E%3Ctext x="200" y="140" font-size="100" text-anchor="middle" dominant-baseline="middle" fill="white" opacity="0.9"%3E🌊%3C/text%3E%3C/svg%3E',
+      description: 'Múltiples jacuzzis con agua caliente',
+      waitTime: '25 min',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCaTNnw6qeKbc_3n-xT9tXacXFnoiEmu0kYUsrmd0nElCZ9zB5r51Pny6p2Te1iq_jeVy0EuVsJjB6JV1PUOF-jJqSGQezwJ3Z36Fkd21Q-3Td9jmr8sQ2BO_hKSWeI86mN9lB5zP7ZM9ORWylDXSq-_ZMXTU5Nn4IPPb4L3To81kgKhlK5a-7JN8KgLiHkixsi5g9X-td3f4c_PgNyTG8sb-ObxjJOy8e1BDy6RhkIYimjUcjgqi9eRErRQtYQeednU_vk2aX0sRY',
     },
     {
-      id: 5,
-      name: 'Cafetería',
-      icon: '☕',
-      capacity: 40,
+      id: 6,
+      name: 'Piscinas de Hidromasajes',
+      icon: '💆',
+      capacity: 58,
       color: 'bg-yellow-400',
       hoverColor: 'hover:bg-yellow-500',
       top: '45%',
       left: '55%',
-      description: 'Snacks y café',
-      waitTime: '5 min',
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="240"%3E%3Cdefs%3E%3ClinearGradient id="grad5" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:rgb(217,119,6);stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:rgb(180,83,9);stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="240" fill="url(%23grad5)"/%3E%3Ctext x="200" y="140" font-size="100" text-anchor="middle" dominant-baseline="middle" fill="white" opacity="0.9"%3E☕%3C/text%3E%3C/svg%3E',
-    },
-    {
-      id: 6,
-      name: 'Área Infantil',
-      icon: '🎪',
-      capacity: 15,
-      color: 'bg-green-500',
-      hoverColor: 'hover:bg-green-600',
-      top: '70%',
-      left: '50%',
-      description: 'Juegos para niños',
-      waitTime: '8 min',
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="240"%3E%3Cdefs%3E%3ClinearGradient id="grad6" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:rgb(168,85,247);stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:rgb(147,51,234);stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="240" fill="url(%23grad6)"/%3E%3Ctext x="200" y="140" font-size="100" text-anchor="middle" dominant-baseline="middle" fill="white" opacity="0.9"%3E🎪%3C/text%3E%3C/svg%3E',
+      description: 'Piscinas terapéuticas con chorros de agua',
+      waitTime: '10 min',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC_7sF4ZQ7k_JLAkrrIUJUDo2Xi6ihrLcnHsooKxmF76erOhXZnpyspJzsJfF2W2ZH80QCeEbJNRiWIX-WQTMXJ6azhwmo7qofB8VyKC-8z-SP_XDrm1HHsYyfJi37lTaawJKCADE-ZQ_1Iwn4gDtekhqp2uzBrSw7voeA6AhZIdIeGDXFW6DycgxADnhL7cWBovM7AnRBm5Hho_25FPXkk6ysc1Ea_N6HuL_bmlfDHsXH3WUWSaREYi2bhgVxJM90oaHxqe0wUYbw',
     },
   ]
 
