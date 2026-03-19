@@ -61,4 +61,3 @@ src/
 
 ---
 
-**Desarrollado con ❤️ para la materia de Reingeniería de Procesos de Negocio**
