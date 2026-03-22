@@ -29,7 +29,7 @@ Como parte de la materia, identificamos cuellos de botella en la gestión de flu
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/infinity-open.git
+   git clone https://github.com/LautaroNovello/Infinity-Open
    cd infinity-open
    ```
 
